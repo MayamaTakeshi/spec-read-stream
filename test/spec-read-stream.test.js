@@ -1,4 +1,9 @@
 const { expect } = require('chai')
+
+const chai = require("chai")
+chai.use(require("chai-events"))
+const should = chai.should()
+
 const SpecReadStream = require('../lib/spec-read-stream')
 
 describe('spec-stream', () => {
@@ -93,6 +98,19 @@ describe('spec-stream', () => {
 			expect(st.read(10)).to.eql([[10, 'abc']])
 
 			expect(st.read(10)).to.be.null
+		})
+	})
+
+	describe('#on', () => {
+		it('should emit event empty', () => {
+			var st = new SpecReadStream()
+
+			st.should.emit('empty')
+
+			st.add([10, 'abc'])
+			expect(st.read(10)).to.eql([[10, 'abc']])
+
+			return st
 		})
 	})
 })
