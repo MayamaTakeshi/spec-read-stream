@@ -1,6 +1,6 @@
 {
   "name": "spec-read-stream",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A simple spec read stream module",
   "main": "lib/spec-read-stream.js",
   "directories": {
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/MayamaTakeshi/spec-read-stream#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.0.1",
-    "chai-events": "0.0.3"
+    "chai-events": "0.0.3",
+    "mocha": "^7.1.1"
   }
 }
